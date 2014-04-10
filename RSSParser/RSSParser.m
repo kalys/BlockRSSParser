@@ -71,6 +71,10 @@
     }
     
     tmpString = [[NSMutableString alloc] init];
+
+    if ([elementName isEqualToString:@"enclosure"]) {
+             [tmpString appendString: [attributeDict objectForKey: @"url"]];
+    }
     
 }
 
@@ -126,6 +130,10 @@
         
         if ([elementName isEqualToString:@"guid"]) {
             [currentItem setGuid:tmpString];
+        }
+
+        if ([elementName isEqualToString:@"enclosure"]) {
+            [currentItem setEnclosure:[NSURL URLWithString: tmpString]];
         }
     }
     
