@@ -21,6 +21,7 @@
 @property (strong,nonatomic) NSString *author;
 @property (strong,nonatomic) NSString *guid;
 @property (strong,nonatomic) NSURL *enclosure;
+@property (strong, nonatomic) UIImage *postImage;
 
 -(NSArray *)imagesFromItemDescription;
 -(NSArray *)imagesFromContent;
