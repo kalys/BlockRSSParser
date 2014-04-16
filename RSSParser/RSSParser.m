@@ -79,7 +79,7 @@
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
-{    
+{
     if ([elementName isEqualToString:@"item"] || [elementName isEqualToString:@"entry"]) {
         [items addObject:currentItem];
     }
@@ -135,6 +135,12 @@
         if ([elementName isEqualToString:@"enclosure"]) {
             [currentItem setEnclosure:[NSURL URLWithString: tmpString]];
         }
+        
+        if ([elementName isEqualToString:@"yandex:full-text"]) {
+            currentItem.fullText = tmpString;
+        }
+        
+        // yandex:full-text
     }
     
     if ([elementName isEqualToString:@"rss"] || [elementName isEqualToString:@"feed"]) {

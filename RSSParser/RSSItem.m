@@ -73,6 +73,7 @@
         _author = [aDecoder decodeObjectForKey:@"author"];
         _guid = [aDecoder decodeObjectForKey:@"guid"];
         _enclosure = [aDecoder decodeObjectForKey:@"enclosure"];
+        _fullText = [aDecoder decodeObjectForKey:@"fullText"];
     }
     return self;
 }
@@ -90,6 +91,7 @@
     [aCoder encodeObject:self.author forKey:@"author"];
     [aCoder encodeObject:self.guid forKey:@"guid"];
     [aCoder encodeObject:self.enclosure forKey:@"enclosure"];
+    [aCoder encodeObject:self.fullText forKey:@"fullText"];
 }
 
 #pragma mark -
