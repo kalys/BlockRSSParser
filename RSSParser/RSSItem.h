@@ -23,6 +23,7 @@
 @property (strong,nonatomic) NSURL *enclosure;
 @property (strong, nonatomic) UIImage *postImage;
 @property (strong, nonatomic) NSString *fullText;
+@property (strong, nonatomic) NSString *caption;
 
 -(NSArray *)imagesFromItemDescription;
 -(NSArray *)imagesFromContent;

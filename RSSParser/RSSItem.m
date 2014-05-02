@@ -74,6 +74,7 @@
         _guid = [aDecoder decodeObjectForKey:@"guid"];
         _enclosure = [aDecoder decodeObjectForKey:@"enclosure"];
         _fullText = [aDecoder decodeObjectForKey:@"fullText"];
+        _caption = [aDecoder decodeObjectForKey:@"caption"];
     }
     return self;
 }
@@ -92,6 +93,7 @@
     [aCoder encodeObject:self.guid forKey:@"guid"];
     [aCoder encodeObject:self.enclosure forKey:@"enclosure"];
     [aCoder encodeObject:self.fullText forKey:@"fullText"];
+    [aCoder encodeObject:self.caption forKey:@"caption"];
 }
 
 #pragma mark -

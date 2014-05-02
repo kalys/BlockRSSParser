@@ -140,6 +140,10 @@
             currentItem.fullText = tmpString;
         }
         
+        if ([elementName isEqualToString:@"yandex:caption"]) {
+            currentItem.caption = tmpString;
+        }
+        
         // yandex:full-text
     }
     
