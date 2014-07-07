@@ -76,6 +76,10 @@
              [tmpString appendString: [attributeDict objectForKey: @"url"]];
     }
     
+    if ([elementName isEqualToString:@"yandex:video"]) {
+        [tmpString appendString: [attributeDict objectForKey: @"url"]];
+    }
+    
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
@@ -135,6 +139,10 @@
         if ([elementName isEqualToString:@"enclosure"]) {
             [currentItem setEnclosure:[NSURL URLWithString: tmpString]];
         }
+
+        if ([elementName isEqualToString:@"yandex:video"] && [tmpString length] > 0) {
+            currentItem.videoURL = [NSURL URLWithString:tmpString];
+        }
         
         if ([elementName isEqualToString:@"yandex:full-text"]) {
             currentItem.fullText = tmpString;
@@ -143,8 +151,6 @@
         if ([elementName isEqualToString:@"yandex:caption"]) {
             currentItem.caption = tmpString;
         }
-        
-        // yandex:full-text
     }
     
     if ([elementName isEqualToString:@"rss"] || [elementName isEqualToString:@"feed"]) {

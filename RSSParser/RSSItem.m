@@ -75,6 +75,7 @@
         _enclosure = [aDecoder decodeObjectForKey:@"enclosure"];
         _fullText = [aDecoder decodeObjectForKey:@"fullText"];
         _caption = [aDecoder decodeObjectForKey:@"caption"];
+        _videoURL = [aDecoder decodeObjectForKey:@"videoURL"];
     }
     return self;
 }
@@ -94,6 +95,7 @@
     [aCoder encodeObject:self.enclosure forKey:@"enclosure"];
     [aCoder encodeObject:self.fullText forKey:@"fullText"];
     [aCoder encodeObject:self.caption forKey:@"caption"];
+    [aCoder encodeObject:self.videoURL forKey:@"videoURL"];
 }
 
 #pragma mark -

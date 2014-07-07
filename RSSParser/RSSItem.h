@@ -24,6 +24,7 @@
 @property (strong, nonatomic) UIImage *postImage;
 @property (strong, nonatomic) NSString *fullText;
 @property (strong, nonatomic) NSString *caption;
+@property (strong, nonatomic) NSURL *videoURL;
 
 -(NSArray *)imagesFromItemDescription;
 -(NSArray *)imagesFromContent;
